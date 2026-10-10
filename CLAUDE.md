@@ -126,6 +126,10 @@ writing) before significant UI work.
 - Confirm before irreversible or outward-facing actions.
 - Do a **security pass** on impactful changes (auth, payments, data export, anything handling
   secrets or user data) before shipping.
+- **Harden infrastructure config** (web servers, reverse proxies, error pages, Docker): hide
+  software versions/banners (e.g. server tokens), disable directory listing, set sensible security
+  headers, never expose stack traces / debug in production, apply least privilege. Look up current
+  hardening guidance for the specific tool rather than guessing.
 - If something edges into a **legal/ethical "gray" area** (rare), stop and **verify against current,
   authoritative sources** whether it is low-risk and lawful before proceeding.
 - Secrets only in gitignored config (e.g. `.env`), never committed.
