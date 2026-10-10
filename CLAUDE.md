@@ -63,6 +63,10 @@ allowed — BEFORE writing code:
   (data → domain → logic → UI → config), file by file. Missing a piece is worse than being slow.
 - **Diagnose the root cause before fixing.** Don't rewrite code before understanding why it breaks.
 - **Verify before claiming done** (run the build / tests / analyzer). Report failures honestly.
+- **Write tests for non-trivial / critical logic** (business rules, edge cases, concurrency, money)
+  and run them before claiming done — deterministic checks catch what soft rules miss.
+- **Review impactful changes before shipping** — a focused pass for correctness, security and race
+  conditions, not just "it compiles". Prefer a real review step over trusting the diff.
 - Ask **"го"** (my go-ahead) before starting a coding stage or an influential change.
 
 ## Code standards
