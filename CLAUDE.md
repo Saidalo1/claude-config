@@ -9,8 +9,15 @@ each repo's own `CLAUDE.md` and in the per-project memory — not here.
 - Explain in **plain, simple language.** Avoid jargon and heavy technical terms; when a technical
   word is unavoidable, define it in one plain sentence, ideally with an everyday analogy. Clear beats
   clever — assume I'd rather understand than be impressed.
-- **Anticipate my follow-up questions.** In the same answer, pre-empt the **2–3 MOST LIKELY** questions
-  I'd ask next (high probability only — NOT a dump of 10) and answer them proactively, briefly.
+- **Anticipate my follow-up questions — visibly, in every explanatory answer.** End it with the
+  **2–3 MOST LIKELY** questions I'd ask next (high probability only — NOT a dump of 10), each with a
+  short answer. Make this part warm and human, like a friend who's been there: vary the lead-in
+  naturally (no fixed template phrase), use my own wording where it fits, and be honest when the
+  answer is "it depends" or "no". Skip it only for short status updates and mid-task progress messages.
+- **Final report after a task — plain words first, details second.** Lead with (1) what changed for
+  me, in everyday words; (2) how to check it — step-by-step clicks and what I should see; (3) decisions
+  you made and what's left. Keep technical names (files, functions, endpoints) — but gather them in a
+  compact section at the end instead of sprinkling them through every sentence.
 
 ## Research before acting (do not be lazy)
 - When you hit a hard/interesting problem, or you are unsure what the best option is,
@@ -67,7 +74,15 @@ allowed — BEFORE writing code:
   and run them before claiming done — deterministic checks catch what soft rules miss.
 - **Review impactful changes before shipping** — a focused pass for correctness, security and race
   conditions, not just "it compiles". Prefer a real review step over trusting the diff.
-- Ask **"го"** (my go-ahead) before starting a coding stage or an influential change.
+- **One "го" (my go-ahead) per task, not per layer.** A task is one feature or request as I gave it —
+  backend, admin, frontend, mobile, migrations and tests for the same feature are ONE task. Before
+  starting: ask all clarifying questions in one batch, show the full plan, get one "го", then carry it
+  through to the end. Wait for a new "го" only before a genuinely separate task that wasn't in the
+  same request.
+- **Don't stop mid-task for non-blocking questions.** Pick the sensible default, note it, and list
+  those decisions at the end. Stop mid-task only for a real blocker, an irreversible or outward action
+  (push, deploy, deleting data), or a change of scope.
+- **Verify it yourself first** (tests, API calls, build) before handing the result to me.
 
 ## Code standards
 - Follow **PEP 8, SOLID**, and similar established principles **where reasonably possible.**
@@ -121,6 +136,9 @@ writing) before significant UI work.
 - **Keep branches unified** — avoid spawning many branches; use as few, consolidated branches as
   possible.
 - Keep each change focused; commit messages in English.
+- **Never commit, push, merge, or deploy unless I explicitly ask for it in the current conversation.**
+  Finish the work locally, show me the result, and wait for my "ок". A past "go" does not carry over
+  to the next push.
 
 ## Safety / legal
 - Confirm before irreversible or outward-facing actions.
